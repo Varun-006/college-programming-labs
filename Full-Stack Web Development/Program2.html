@@ -1,0 +1,57 @@
+//2. Read a string from the user, Find its length. Extract the word "JavaScript" using 
+substring() or slice(). Replace one word with another word and log the new string. 
+Write a function isPalindrome(str) that checks if a given string is a palindrome 
+(reads the same backward). 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Manipulation</title>
+
+    <script>
+        // Function to check if a string is a palindrome (Method 1)
+        function isPalindrome1(str) {
+            for (let i = 0; i < str.length / 2; i++) {
+                if (str.charAt(i) != str.charAt(str.length - 1 - i)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Function to check if a string is a palindrome (Method 2 - Cleaner version)
+        function isPalindrome(str) {
+            let cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+            return cleanedStr === cleanedStr.split('').reverse().join('');
+        }
+
+        // Take input from user
+        let userInput = prompt("Enter a string:");
+
+        // Find length of string
+        let lengthOfString = userInput.length;
+
+        // Extract the word "JavaScript"
+        let extractedWord = userInput.includes("JavaScript") ?
+            userInput.substring(
+                userInput.indexOf("JavaScript"),
+                userInput.indexOf("JavaScript") + "JavaScript".length
+            )
+            : "JavaScript not found";
+
+        // Replace JavaScript with TypeScript
+        let newString = userInput.replace("JavaScript", "TypeScript");
+
+        // Check palindrome
+        let palindromeCheck = isPalindrome(userInput);
+
+        // Log result in console
+        console.log(`New String after Replacement: ${newString}`);
+
+        // Show result in alert box
+        alert(`Length: ${lengthOfString}
+Extracted Word: ${extractedWord}
+New String: ${newString}
+Palindrome: ${palindromeCheck}`);
+    </script>
+</head>
+</html>

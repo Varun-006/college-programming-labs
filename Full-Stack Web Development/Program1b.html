@@ -1,0 +1,39 @@
+//1b. Create an array of 5 cities and perform the following operations:  
+Log the total number of cities. Add a new city at the end. Remove the first city. Find and 
+log the index of a specific city.
+<!DOCTYPE html>
+<html>
+<head>
+<title>Array Operations</title>
+</head>
+
+<body>
+
+<script>
+
+// Q1b: Create an array of 5 cities.
+let cities = ["New York", "Los Angeles", "Chicago", "Miami", "Houston"];
+
+
+// Q1b: Log the total number of cities.
+console.log("Total number of cities: " + cities.length);
+
+
+// Q1b: Add a new city at the end.
+cities.push("San Francisco");
+console.log("Cities after adding a new city: " + cities);
+
+
+// Q1b: Remove the first city.
+cities.shift();
+console.log("Cities after removing the first city: " + cities);
+
+
+// Q1b: Find and log the index of a specific city.
+let cityIndex = cities.indexOf("Miami");
+console.log("Index of Miami: " + cityIndex);
+
+</script>
+
+</body>
+</html>

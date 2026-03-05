@@ -1,0 +1,45 @@
+//4. Create a button in your HTML with the text "Click Me". Add an event listener to log "Button clicked!" 
+to the console when the button is clicked. Select an image and add a mouseover event listener to change 
+its border color. Add an event listener to the document that logs the key pressed by the user. 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listeners Experiment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Button -->
+    <button id="clickButton">Click Me</button>
+    <br><br>
+
+    <!-- Image -->
+    <img id="ExperimentImage"
+         src="https://www.w3schools.com/html/img_chania.jpg"
+         alt="Experiment Image"
+         width="200">
+
+    <script>
+        // Button click event
+        document.getElementById("clickButton").addEventListener("click", function () {
+            console.log("Button clicked!");
+        });
+
+        // Image mouseover event
+        document.getElementById("ExperimentImage").addEventListener("mouseover", function () {
+            this.style.border = "5px solid red";
+        });
+
+        // Image mouseout event
+        document.getElementById("ExperimentImage").addEventListener("mouseout", function () {
+            this.style.border = "none";
+        });
+
+        // Key press event
+        document.addEventListener("keydown", function (event) {
+            console.log("Key pressed: " + event.key);
+        });
+    </script>
+
+</body>
+</html>

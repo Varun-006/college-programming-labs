@@ -1,0 +1,68 @@
+// 3. Create an object student with properties: name (string), grade (number), subjects (array), 
+displayInfo() (method to log the student's details) Write a script to dynamically add a passed 
+property to the student object, with a value of true or false based on their grade. Create a loop 
+to log all keys and values of the student object. 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Student Object</title>
+</head>
+
+<body>
+
+<script>
+
+// Q2: Write a JavaScript program to create a student object dynamically
+// by taking input from the user.
+
+
+// Function to create a student object
+function createStudent() {
+
+    // Collect inputs for the student object
+    let student = {
+        name: prompt("Enter the student's name:"),
+        grade: parseInt(prompt("Enter the student's grade:")),
+        subjects: prompt("Enter the student's subjects separated by commas:")
+                    .split(',')
+                    .map(subject => subject.trim())
+    };
+
+    return student;
+}
+
+
+// Function to display student details
+function displayInfo(student) {
+
+    console.log("Student Details:");
+
+    // Loop through object properties
+    for (let key in student) {
+
+        if (typeof student[key] !== "function") {
+            console.log(key + ": " + student[key]);
+        }
+    }
+
+    // Display pass status
+    console.log("Passed:", student.passed ? "Yes" : "No");
+    console.log("------------------------------");
+}
+
+
+// Create student object using user input
+let student = createStudent();
+
+
+// Dynamically add 'passed' property based on grade
+student.passed = student.grade >= 40;
+
+
+// Display student details
+displayInfo(student);
+
+</script>
+
+</body>
+</html>
